@@ -3,10 +3,14 @@
 <h3><%=  @restaurant.category%></h3>
 <p><%=  @restaurant.address%></p>
 <p><%=  @restaurant.phone_number%></p>
+<% @reviews.each do |review| %>
+  <p>  <%= review.content %> </p>
+  <p>  <%= review.rating %> </p>
+<% end %>
 
-<!-- <button><%= link_to "Add a review", new_restaurant_path, method: :get %></button>
- -->
-<!-- <button> <%= link_to "Delete", restaurant_path(@restaurant),
+<button><%= link_to "Add a review", new_restaurant_review_path(@restaurant), method: :get %></button>
+
+<button> <%= link_to "Delete", restaurant_path(@restaurant),
       method: :delete,
-      data: { confirm: "Are you sure?" } %> </button> -->
+      data: { confirm: "Are you sure?" } %> </button>
 
